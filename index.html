@@ -26,7 +26,12 @@
 
         <script>
             document.addEventListener('DOMContentLoaded', function() {
-                generateTable();
+                //generateTable();
+                fetch('darksimple.json')
+                .then(response => response.json())
+                .then(data => generateTable(data))
+                .catch(error => console.error('Error fetching colors:', error));
+
             });
         </script>
     </body>

@@ -1,44 +1,30 @@
-// Sample JSON data
-const colors = [
-    { "Red": "#FF0000" },
-    { "Green": "#00FF00" },
-    { "Blue": "#0000FF" }
-];
-
-function generateTable() {
-    // Create table element
+function generateTable(data) {
+    const colors = data.colors; // Access the 'colors' object from the fetched data
     const table = document.createElement('table');
     table.style.width = '100%';
     table.setAttribute('border', '1');
 
-    // Iterate over JSON data
-    colors.forEach(color => {
-        // Create a row for each color
+    Object.entries(colors).forEach(([key, value]) => {
         const tr = document.createElement('tr');
 
-        // Extract key (color name) and value (color hex)
-        const key = Object.keys(color)[0];
-        const value = color[key];
+        const tdName = document.createElement('td');
+        tdName.textContent = key;
 
-        // Create cells for key and value
-        const tdKey = document.createElement('td');
-        tdKey.textContent = key;
-        const tdValue = document.createElement('td');
-        tdValue.textContent = value;
-        tdValue.style.backgroundColor = value; // Set background to the color
+        const tdHex = document.createElement('td');
+        tdHex.textContent = value;
 
-        // Append cells to row
-        tr.appendChild(tdKey);
-        tr.appendChild(tdValue);
+        const tdColor = document.createElement('td');
+        tdColor.style.backgroundColor = value;
+        tdColor.style.width = '250px'; 
+        tdColor.style.height = '30px';
 
-        // Append row to table
+        tr.appendChild(tdName);
+        tr.appendChild(tdHex);
+        tr.appendChild(tdColor);
+
         table.appendChild(tr);
     });
 
-    // Append table to container
     const container = document.getElementById('table-container');
     container.appendChild(table);
 }
-
-// Call the function to generate the table
-//generateTable();
