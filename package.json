@@ -1,0 +1,17 @@
+{
+  "name": "color-viewer",
+  "version": "1.0.0",
+  "description": "- easy way to do the same with css file from n4?",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.1"
+  }
+}

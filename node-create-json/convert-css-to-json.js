@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 // Construct the path to the CSS file
-const cssFilePath = path.join(__dirname, '..', 'css-files', 'theme.css');
+const cssFilePath = path.join(__dirname, '..', 'css-files', 'wiresheet.css');
 
 fs.readFile(cssFilePath, 'utf8', function(err, data) {
     if (err) {
